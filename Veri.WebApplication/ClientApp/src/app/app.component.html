@@ -1,0 +1,40 @@
+<!--<body>
+  <app-nav-menu></app-nav-menu>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</body>-->
+<body>
+
+  <br /><br /><br /><br />
+  <form [formGroup]="formGroup">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <input class="form-control" id='checkedOutDate' placeholder='Enter checked out date' formControlName="checkedOutDate" />
+        </div>
+        <div class="col-md-3">
+          <input class="form-control" id='returnDate' placeholder='Enter return date' formControlName="returnDate" />
+        </div>
+        <div class="col-md-3">
+          <select formControlName="countryId" class="form-control">
+            <option *ngFor="let country of countries"
+                    [value]="country.id">
+              {{country.name}}
+            </option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <button type="button" (click)="onClick()" class="form-control">Calculate</button>
+        </div>
+      </div>
+      <br /><br /><br /><br />
+      <div>
+        <div class="col-md-12">
+          {{message}}
+        </div>
+      </div>
+    </div>
+  </form>
+</body>
